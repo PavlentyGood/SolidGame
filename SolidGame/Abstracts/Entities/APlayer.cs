@@ -18,21 +18,32 @@ namespace SolidGame.Abstracts.Entities {
 		public IList<IHarvestItem> ExtractedHarvests { get; set; }
 		public abstract IHarvestItemFactory HarvestItemFactory { get; set; }
 
-		public abstract void Update();
-		public abstract void Move();
-		protected abstract ILocation GetNearPlantLocation();
-		public abstract void Die();
+		public APlayer(IHarvestItemFactory harvestItemFactory) {
+			HarvestItemFactory = harvestItemFactory;
+		}
 
-		public IEnumerable<IHarvest> FindNearHarvestes() {
+		public abstract void Move();
+		public abstract void Die();
+		protected abstract ILocation GetNearPlantLocation();
+
+		public virtual void Update() {
+			Move();
+
+			if (Health <= 0) {
+				Game.FinishGame();
+			}
+		}
+
+		public virtual IEnumerable<IHarvest> FindNearHarvestes() {
 			return Game.Harvests
 				.Where(b => b.Location.IsNear(Location));
 		}
 
-		public IHarvest PlantHarvest(IHarvestItem item) {
+		public virtual IHarvest PlantHarvest(IHarvestItem item) {
 			return Game.HarvestFactory.CreateHarvest(item, GetNearPlantLocation());
 		}
 
-		public void ExtractHarvest(IHarvest harvest) {
+		public virtual void ExtractHarvest(IHarvest harvest) {
 			harvest.Health -= ExtractDamage;
 			if (harvest.Health <= 0) {
 				Game.Harvests.Remove(harvest);
@@ -40,7 +51,7 @@ namespace SolidGame.Abstracts.Entities {
 			}
 		}
 
-		public void PutHarvestToHouse(IHarvestItem item) {
+		public virtual void PutHarvestToHouse(IHarvestItem item) {
 			ExtractedHarvests.Remove(item);
 			Game.House.ExtreactedHarvests.Add(item);
 		}

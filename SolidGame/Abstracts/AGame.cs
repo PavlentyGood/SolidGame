@@ -30,7 +30,7 @@ namespace SolidGame.Abstracts {
 
 		public abstract void FinishGame();
 
-		public void StartGame() {
+		public virtual void StartGame() {
 			House = HouseFactory.CreateHouse();
 			Player = PlayerFactory.CreatePlayer(House);
 
@@ -40,19 +40,15 @@ namespace SolidGame.Abstracts {
 			}
 		}
 
-		protected void SpawnEnemies() {
+		protected virtual void SpawnEnemies() {
 			Enemies.Add(EnemyFactory.CreateEnemy(this));
 		}
 		
-		protected void UpdatePlayer() {
-			Player.Move();
-
-			if (Player.Health <= 0) {
-				FinishGame();
-			}
+		protected virtual void UpdatePlayer() {
+			Player.Update();
 		}
 
-		protected void UpdateEnemies() {
+		protected virtual void UpdateEnemies() {
 			SpawnEnemies();
 
 			foreach (var e in Enemies) {
@@ -60,13 +56,13 @@ namespace SolidGame.Abstracts {
 			}
 		}
 
-		protected void UpdateHarvests() {
+		protected virtual void UpdateHarvests() {
 			foreach (var h in Harvests) {
 				h.Grow();
 			}
 		}
 
-		public void UpdateGame() {
+		public virtual void UpdateGame() {
 			UpdatePlayer();
 			UpdateEnemies();
 			UpdateHarvests();

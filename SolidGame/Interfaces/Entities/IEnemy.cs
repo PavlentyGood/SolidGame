@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces.Entities {
-	interface IEnemy : IMoveable {
+	interface IEnemy : IEntity, IMoveable {
 
 		int Damage { get; set; }
 

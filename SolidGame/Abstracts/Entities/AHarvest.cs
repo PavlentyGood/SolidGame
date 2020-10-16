@@ -18,7 +18,7 @@ namespace SolidGame.Abstracts.Entities {
 		public abstract void Update();
 		public abstract void Die();
 
-		public void Grow() {
+		public virtual void Grow() {
 			if (Age < MaxAge) {
 				Age += GrowValue;
 			}

@@ -13,15 +13,17 @@ namespace SolidGame.Abstracts.Entities {
 		public ILocation Location { get; set; }
 		protected ILocation TargetLocation { get; set; }
 
+		public abstract void Move();
 		protected abstract bool IsAvailablePursuePlayer();
 		protected abstract ILocation GetNextMoveTarget();
-		public abstract void Move();
 
-		public void AttackPlayer() {
+		public virtual void AttackPlayer() {
 			Game.Player.Health -= Damage;
 		}
 		
-		public void Update() {
+		public virtual void Update() {
+			Move();
+
 			if (Location.IsNear(Game.Player.Location)) {
 				AttackPlayer();
 			} else if (IsAvailablePursuePlayer()) {
@@ -29,8 +31,6 @@ namespace SolidGame.Abstracts.Entities {
 			} else if (Location.IsNear(TargetLocation)) {
 				TargetLocation = GetNextMoveTarget();
 			}
-
-			Move();
 		}
 	}
 }

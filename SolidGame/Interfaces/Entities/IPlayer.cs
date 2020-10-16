@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces.Entities {
-	interface IPlayer : IMoveable, IKillable {
+	interface IPlayer : IEntity, IMoveable, IKillable {
 
 		int ExtractDamage { get; set; }
 		bool IsInHouse { get; set; }
