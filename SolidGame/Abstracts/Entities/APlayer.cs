@@ -30,7 +30,7 @@ namespace SolidGame.Abstracts.Entities {
 			Move();
 
 			if (Health <= 0) {
-				Game.FinishGame();
+				Die();
 			}
 		}
 

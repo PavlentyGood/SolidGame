@@ -21,27 +21,15 @@ namespace SolidGame.Abstracts {
 		public ILocation WorldSize { get; set; }
 		public int StartHarvestCount { get; set; }
 
-		public AGame(IPlayerFactory playerFactory, IHouseFactory houseFactory, IEnemyFactory enemyFactory, IHarvestFactory harvestFactory) {
-			PlayerFactory = playerFactory;
-			HouseFactory = houseFactory;
-			EnemyFactory = enemyFactory;
-			HarvestFactory = harvestFactory;
-		}
-
 		public abstract void FinishGame();
+		protected abstract void CreateStartHarvests();
+		protected abstract void SpawnEnemies();
 
 		public virtual void StartGame() {
 			House = HouseFactory.CreateHouse();
 			Player = PlayerFactory.CreatePlayer(House);
-
-			var i = 0;
-			while (i++ < StartHarvestCount) {
-				Harvests.Add(HarvestFactory.CreateHarvest(this));
-			}
-		}
-
-		protected virtual void SpawnEnemies() {
-			Enemies.Add(EnemyFactory.CreateEnemy(this));
+			
+			CreateStartHarvests();
 		}
 		
 		protected virtual void UpdatePlayer() {
