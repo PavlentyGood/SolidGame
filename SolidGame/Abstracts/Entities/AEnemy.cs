@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts.Entities {
-	abstract class AEnemy : IEnemy {
+	public abstract class AEnemy : IEnemy {
 
 		public int Damage { get; set; }
 		public int Speed { get; set; }

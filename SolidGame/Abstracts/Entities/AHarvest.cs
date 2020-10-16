@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts.Entities {
-	abstract class AHarvest : IHarvest {
+	public abstract class AHarvest : IHarvest {
 
 		public int Age { get; set; }
 		public int Health { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces {
-	interface IKillable {
+	public interface IKillable {
 
 		int Health { get; set; }
 

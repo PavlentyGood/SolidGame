@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces {
-	interface IMoveable {
+	public interface IMoveable {
 
 		int Speed { get; set; }
 

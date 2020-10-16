@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts {
-	abstract class AEnemyStrategyProvider : IEnemyStrategyProvider {
+	public abstract class AEnemyStrategyProvider : IEnemyStrategyProvider {
 
 		public IEnemy Enemy { get; set; }
 

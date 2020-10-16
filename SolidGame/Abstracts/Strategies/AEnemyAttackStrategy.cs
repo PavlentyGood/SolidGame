@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts.Strategies {
-	abstract class AEnemyAttackStrategy : IEnemyStrategy {
+	public abstract class AEnemyAttackStrategy : IEnemyStrategy {
 
 		public abstract void Perform(IEnemy enemy);
 	}

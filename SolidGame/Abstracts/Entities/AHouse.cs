@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts.Entities {
-	abstract class AHouse : IHouse {
+	public abstract class AHouse : IHouse {
 
 		public abstract IList<IHarvestItem> ExtreactedHarvests { get; set; }
 		public abstract IGame Game { get; set; }

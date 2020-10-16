@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces.Factories {
-	interface IPlayerFactory {
+	public interface IPlayerFactory {
 
 		IPlayer CreatePlayer(IHouse house);
 	}

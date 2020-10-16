@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces {
-	interface ILocation {
+	public interface ILocation {
 
 		bool IsNear(ILocation other);
 	}

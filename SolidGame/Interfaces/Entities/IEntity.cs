@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces.Entities {
-	interface IEntity {
+	public interface IEntity {
 
 		IGame Game { get; set; }
 		ILocation Location { get; set; }

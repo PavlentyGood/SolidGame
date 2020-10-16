@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts.Strategies {
-	abstract class AEnemyPursueStrategy : IEnemyStrategy {
+	public abstract class AEnemyPursueStrategy : IEnemyStrategy {
 
 		public abstract void Perform(IEnemy enemy);
 	}

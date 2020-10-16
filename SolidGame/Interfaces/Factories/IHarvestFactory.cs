@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces.Factories {
-	interface IHarvestFactory {
+	public interface IHarvestFactory {
 
 		IHarvest CreateHarvest(IGame game);
 		IHarvest CreateHarvest(IHarvestItem item, ILocation location);

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Abstracts {
-	abstract class AGame : IGame {
+	public abstract class AGame : IGame {
 
 		public IPlayerFactory PlayerFactory { get; set; }
 		public IHouseFactory HouseFactory { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 
 namespace SolidGame.Abstracts.Entities {
-	abstract class APlayer : IPlayer {
+	public abstract class APlayer : IPlayer {
 
 		public int Health { get; set; }
 		public int ExtractDamage { get; set; }

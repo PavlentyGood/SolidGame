@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces {
-	interface IGame {
+	public interface IGame {
 
 		IPlayerFactory PlayerFactory { get; set; }
 		IHouseFactory HouseFactory { get; set; }

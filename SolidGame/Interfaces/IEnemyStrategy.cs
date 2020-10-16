@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SolidGame.Interfaces {
-	interface IEnemyStrategy {
+	public interface IEnemyStrategy {
 
 		void Perform(IEnemy enemy);
 	}
