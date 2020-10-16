@@ -11,7 +11,8 @@ namespace SolidGame.Abstracts.Entities {
 		public int Speed { get; set; }
 		public IGame Game { get; set; }
 		public ILocation Location { get; set; }
-		protected ILocation TargetLocation { get; set; }
+		public ILocation TargetLocation { get; set; }
+		public IEnemyStrategyProvider StrategyProvider { get; set; }
 
 		public abstract void Move();
 		protected abstract bool IsAvailablePursuePlayer();
@@ -24,13 +25,9 @@ namespace SolidGame.Abstracts.Entities {
 		public virtual void Update() {
 			Move();
 
-			if (Location.IsNear(Game.Player.Location)) {
-				AttackPlayer();
-			} else if (IsAvailablePursuePlayer()) {
-				TargetLocation = Game.Player.Location;
-			} else if (Location.IsNear(TargetLocation)) {
-				TargetLocation = GetNextMoveTarget();
-			}
+			StrategyProvider
+				.ProvideStrategy()
+				.Perform(this);
 		}
 	}
 }
