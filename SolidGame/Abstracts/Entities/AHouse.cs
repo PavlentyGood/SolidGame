@@ -10,5 +10,7 @@ namespace SolidGame.Abstracts.Entities {
 		public abstract IList<IHarvestItem> ExtreactedHarvests { get; set; }
 		public abstract IGame Game { get; set; }
 		public abstract ILocation Location { get; set; }
+
+		public abstract void Update();
 	}
 }

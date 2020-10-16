@@ -15,6 +15,7 @@ namespace SolidGame.Abstracts.Entities {
 		public IGame Game { get; set; }
 		public ILocation Location { get; set; }
 
+		public abstract void Update();
 		public abstract void Die();
 
 		public void Grow() {

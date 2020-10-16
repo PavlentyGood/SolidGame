@@ -19,7 +19,7 @@ namespace SolidGame.Abstracts {
 		public IList<IEnemy> Enemies { get; set; }
 
 		public ILocation WorldSize { get; set; }
-		public int StartBerriesCount { get; set; }
+		public int StartHarvestCount { get; set; }
 
 		public AGame(IPlayerFactory playerFactory, IHouseFactory houseFactory, IEnemyFactory enemyFactory, IHarvestFactory harvestFactory) {
 			PlayerFactory = playerFactory;
@@ -35,7 +35,7 @@ namespace SolidGame.Abstracts {
 			Player = PlayerFactory.CreatePlayer(House);
 
 			var i = 0;
-			while (i++ < StartBerriesCount) {
+			while (i++ < StartHarvestCount) {
 				Harvests.Add(HarvestFactory.CreateHarvest(this));
 			}
 		}
@@ -43,7 +43,7 @@ namespace SolidGame.Abstracts {
 		protected void SpawnEnemies() {
 			Enemies.Add(EnemyFactory.CreateEnemy(this));
 		}
-
+		
 		protected void UpdatePlayer() {
 			Player.Move();
 

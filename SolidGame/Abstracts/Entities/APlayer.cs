@@ -18,6 +18,7 @@ namespace SolidGame.Abstracts.Entities {
 		public IList<IHarvestItem> ExtractedHarvests { get; set; }
 		public abstract IHarvestItemFactory HarvestItemFactory { get; set; }
 
+		public abstract void Update();
 		public abstract void Move();
 		protected abstract ILocation GetNearPlantLocation();
 		public abstract void Die();
