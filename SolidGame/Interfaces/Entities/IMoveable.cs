@@ -7,6 +7,6 @@ namespace SolidGame.Interfaces.Entities {
 
 		int Speed { get; set; }
 
-		void Update();
+		void Move();
 	}
 }

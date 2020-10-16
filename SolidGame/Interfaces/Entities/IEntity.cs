@@ -7,5 +7,7 @@ namespace SolidGame.Interfaces.Entities {
 
 		IGame Game { get; set; }
 		ILocation Location { get; set; }
+
+		void Update();
 	}
 }

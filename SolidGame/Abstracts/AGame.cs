@@ -45,7 +45,7 @@ namespace SolidGame.Abstracts {
 		}
 
 		protected void UpdatePlayer() {
-			Player.Update();
+			Player.Move();
 
 			if (Player.Health <= 0) {
 				FinishGame();
